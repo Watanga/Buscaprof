@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @usuario.nombre %>
+</p>
+
+<p>
+  <b>Materia:</b>
+  <%= @usuario.materia %>
+</p>
+
+<p>
+  <b>Precio:</b>
+  $ <%= @usuario.price %>/h
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @usuario.descripcion %>
+</p>
+
+
+<%= link_to 'Editar', edit_usuario_path(@usuario) %> |
+<%= link_to 'Atras', usuarios_path %>

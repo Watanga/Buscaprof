@@ -1,0 +1,24 @@
+// Place all the styles related to the usuarios controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.usuarios {
+	border-bottom: solid 1px #CCC;
+	padding: 5px 0;
+}
+
+.usuarios p {
+	margin: 4px 0;
+}
+
+.usuarios.hover {
+	background: #FAFAFA;
+}
+
+.usuarios .admin {
+	display: none;
+}
+
+.usuarios.hover .admin {
+	display: inline;
+}

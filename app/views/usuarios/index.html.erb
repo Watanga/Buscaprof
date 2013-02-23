@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>Buscar un Profesor</h1>
+</div>
+<div class="well">
+  <%= search_form_for @q do |f| %>
+    <table>
+      <%= f.label :materia_cont, "Buscar por Materia" %>
+      <%= f.text_field :materia_cont %>
+      <td><%= f.label :price_gteq, "Precio desde" %>
+      <%= f.text_field :price_gteq %></td>
+      <td><%= f.label :price_lteq, "Hasta" %>
+      <%= f.text_field :price_lteq %></td> 
+    </table></br>
+      <%= f.submit "Buscar", class:"btn btn-success" %>
+    
+  <% end %>
+</div>
+  <% if user_signed_in? %>
+    <%= link_to "Agregar un Profesor", new_usuario_path, class:"btn btn-info" %>
+  <% end %>
+<hr />
+<% @usuarios.each do |usuarios| %> 
+  <div class="usuarios">
+    <strong><%= usuarios.nombre %></strong>
+    <p><%= usuarios.materia %> - $<%= usuarios.price %> /h</p>
+    <div class="meta">
+      <%= link_to "Ver", usuarios %>
+      <span class="admin">
+        | <%= link_to "Editar", edit_usuario_path(usuarios) %> |
+        <%= link_to "Borrar", usuarios, method: :delete, data: { confirm: "Are you sure?"} %>
+    </div>
+  </div>
+<% end %>
